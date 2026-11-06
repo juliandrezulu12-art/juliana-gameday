@@ -112,8 +112,12 @@ jobs:
               delivery = api('evaluations/' + event + '/' + delivery['evaluation_id'])['evaluation']
           PY
           python3 "$RUNNER_TEMP/arena-request.py"
+                python3 "$RUNNER_TEMP/arena-request.py"
+
       # Misión 02: agrega este paso para solicitar el apply en tu VM privada.
-      # - name: Desplegar la infraestructura en Arena
-      #   env:
-      #     ARENA_OPERATION: deploy
-      #   run: python3 "$RUNNER_TEMP/arena-request.py"
+      - name: Desplegar la infraestructura en Arena
+        env:
+          ARENA_OPERATION: deploy
+        run: python3 "$RUNNER_TEMP/arena-request.py"
+
+        
